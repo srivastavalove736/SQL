@@ -1,0 +1,19 @@
+CREATE database school;
+Use school;
+CREATE TABLE Students (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(100),
+    marks INT,
+    city VARCHAR(50),
+    contact_no VARCHAR(15)
+);
+INSERT INTO Students (rollno, name, marks, city, contact_no) VALUES
+(1, 'Amit Sharma', 85, 'Delhi', '9876543210'),
+(2, 'Priya Singh', 92, 'Pune', '9812345678'),
+(3, 'Rahul Kumar', 78, 'Delhi', '9988776655'),
+(4, 'Sneha Jain', 88, 'Mumbai', '9123456789'),
+(5, 'Vikram Roy', 72, 'Pune', '9012345678');
+SELECT * FROM Students;
+SELECT name, marks FROM Students WHERE marks > 80;
+UPDATE Students SET contact_no = '9999999999' WHERE rollno = 3;
+DELETE FROM Students WHERE rollno = 5;
