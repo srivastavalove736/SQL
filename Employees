@@ -1,0 +1,21 @@
+CREATE DATABASE office;
+USE office;
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    department VARCHAR(50),
+    city VARCHAR(50),
+    contact_no VARCHAR(15)
+);
+INSERT INTO employees (emp_id, name, salary, department, city, contact_no) VALUES
+(1, 'Alice Johnson', 60000.00, 'HR', 'New York', '1234567890'),
+(2, 'Bob Smith', 75000.00, 'IT', 'Seattle', '0987654321'),
+(3, 'Charlie Brown', 45000.00, 'Finance', 'New York', '1122334455'),
+(4, 'David Wilson', 70000.00, 'IT', 'Dallas', '2233445566'),
+(5, 'Eva Clark', 50000.00, 'HR', 'Seattle', '3344556677'),
+(6, 'Frank Miller', 65000.00, 'Finance', 'Dallas', '4455667788');
+SELECT * FROM employees;
+SELECT AVG(salary) AS average_salary FROM employees;
+SELECT name, city FROM employees ORDER BY city ASC;
+SELECT department, COUNT(emp_id) AS employee_count FROM employees GROUP BY department;
