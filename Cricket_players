@@ -1,0 +1,22 @@
+create database sports;
+Use sports;
+CREATE TABLE cricket_players (
+    player_id INT PRIMARY KEY,
+    player_name VARCHAR(50),
+    department VARCHAR(20), -- (Batting, Bowling, All-rounder)
+    city VARCHAR(50),
+    average DECIMAL(5, 2)
+);
+INSERT INTO cricket_players (player_id, player_name, department, city, average)
+VALUES 
+(1, 'Virat Kohli', 'Batting', 'Delhi', 52.7),
+(2, 'Jasprit Bumrah', 'Bowling', 'Ahmedabad', 24.5),
+(3, 'Hardik Pandya', 'All-rounder', 'Baroda', 33.2),
+(4, 'Rohit Sharma', 'Batting', 'Mumbai', 49.1),
+(5, 'Rashid Khan', 'Bowling', 'Kabul', 18.9);
+UPDATE cricket_players 
+SET average = 53.5 
+WHERE player_id = 1;
+UPDATE cricket_players 
+SET average = average + 2.0 
+WHERE department = 'Bowling';
